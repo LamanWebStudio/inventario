@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const res = await fetch("http://localhost:3000/api/registro", {
+            const res = await fetch("https://inventario-backend-qf0d.onrender.com/api/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

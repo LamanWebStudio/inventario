@@ -14,6 +14,7 @@ document.addEventListener("click", (e) =>{
     }
 });
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const formLogin = document.querySelector(".login");
 
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = document.querySelector("#password").value;
 
         try {
-            const res = await fetch("http://localhost:3000/api/login", {
+            const res = await fetch("https://inventario-backend-qf0d.onrender.com/api/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
