@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1></h1>
-        <div>
-            <span></span>
-            <span></span>
-            <span></span>
+    <header class="menu">
+        <h1>Laman Web For trabajador</h1>
+        <div class="burger-boton">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-        <nav>
+        <nav class="nav-oculto">
+            <h2>Servicios</h2>
             <ul>
                 <li>
-                    <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+                    <a href="#"><ion-icon name="home-outline"></ion-icon> Inicio</a>
                 </li>
                 <li>
-                    <a href="#"><ion-icon name="archive-outline"></ion-icon></a>
+                    <a href="#"><ion-icon name="archive-outline"></ion-icon> Registrarme</a>
                 </li>
                 <li>
-                    <a href="#"><ion-icon name="bug-outline"></ion-icon></a>
+                    <a href="#"><ion-icon name="bug-outline"></ion-icon> Informar errores</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <form action="">
+        <section class="contnedor-login">
+            <form class="login" action="">
                 <label for="email">Nombre usuario</label>
                 <input type="email" id="email" name="email" placeholder="Usuario@gmail.com" required>
 
@@ -37,6 +42,7 @@
                 <input type="password" id="password" name="password" placeholder="Password" required>
 
                 <button type="submit">Iniciar sesión</button>
+                <a href="#">Registrarte</a>
             </form>
 
         </section>
