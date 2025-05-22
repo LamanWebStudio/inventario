@@ -21,10 +21,7 @@
             <h2>Servicios</h2>
             <ul>
                 <li>
-                    <a href="#"><ion-icon name="home-outline"></ion-icon> Inicio</a>
-                </li>
-                <li>
-                    <a href="#"><ion-icon name="archive-outline"></ion-icon> Registrarme</a>
+                    <a href="/index.html"><ion-icon name="home-outline"></ion-icon> Inicio</a>
                 </li>
                 <li>
                     <a href="#"><ion-icon name="bug-outline"></ion-icon> Informar errores</a>
@@ -35,20 +32,22 @@
     <main>
         <section class="contnedor-login">
             <form class="login" action="">
-                <label for="email">Email</label>
+                <label for="email">Nombre usuario</label>
+                <input type="text" id="name" name="name" placeholder="name" required>
+
+                <label for="email">Nombre usuario</label>
                 <input type="email" id="email" name="email" placeholder="Usuario@gmail.com" required>
 
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password" placeholder="Password" required>
 
-                <button type="submit">Iniciar sesión</button>
-                <a href="/pages/registro.html">Registrarte</a>
+                <button type="submit">Registrarse</button>
+                <a href="/index.html">Iniciar secion</a>
             </form>
         </section>
     </main>
 
-
-    <script src="script.js"></script>
+    <script src="main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

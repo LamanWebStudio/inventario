@@ -15,31 +15,37 @@ document.addEventListener("click", (e) =>{
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const formLogin = document.querySelector(".login");
+    const formRegistro = document.querySelector(".login");
 
-    formLogin.addEventListener("submit", async (e) => {
+    formRegistro.addEventListener("submit", async (e) => {
         e.preventDefault();
 
+        const name = document.querySelector("#name").value.trim();
         const email = document.querySelector("#email").value.trim();
         const password = document.querySelector("#password").value;
 
+        const nuevoUsuario = {
+            name,
+            email,
+            password
+        };
+
         try {
-            const res = await fetch("http://localhost:3000/api/login", {
+            const res = await fetch("http://localhost:3000/api/registro", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify(nuevoUsuario)
             });
 
             const data = await res.json();
 
             if (res.ok) {
-                alert("Inicio de sesión exitoso");
-                localStorage.setItem("token", data.token || ""); // Si devuelves token
-                window.location.href = "/index.html"; // Página principal tras el login
+                alert("Usuario registrado con éxito");
+                window.location.href = "/index.html"; // Cambia esto si tu login está en otra ruta
             } else {
-                alert("Email o contraseña incorrectos");
+                alert("Error al registrar: " + data.message);
             }
 
         } catch (error) {
