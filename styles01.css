@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 5rem;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --color-menu:rgb(58, 85, 239);
+    --color-text-menu:white;
+    --color-nav:rgb(38, 38, 193);
+    --input-color:rgba(210, 240, 255, 0.895);
+    --text-color:black;
+
+}
+
+.menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--color-menu);
+    width: 100%;
+    color: var(--color-text-menu);
+    height:5rem;
+    top: 0;
+    position: fixed;
+}
+
+.menu h1{
+    font-weight: 300;
+    font-size: 3.5dvh;
+    font-family: "Anton", sans-serif;
+}
+
+.menu .burger-boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50px;
+    width: 50px;
+    gap: 5px;
+}
+
+.menu .burger-boton .bar{
+    background: var(--color-text-menu);
+    padding: 5;
+    width: 80%;
+    height: 5px;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.burger-boton.btBurger  .bar:nth-last-child(1){
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.burger-boton.btBurger .bar:nth-last-child(2){
+    opacity: 0;
+}
+
+.burger-boton.btBurger  .bar:nth-last-child(3){
+    transform: translateY(11px) rotate(45deg);
+}
+
+.menu .nav-oculto{
+    position: fixed;
+    width: 70%;
+    left: -100%;
+    top: 0px;
+    background: var(--color-nav);
+    height: 100dvh;
+    opacity: 0;
+    padding: 20px;
+    transition: all .3s ease-in-out;
+}
+
+.nav-oculto h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+}
+
+.nav-oculto a{
+    color: var(--color-text-menu);
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.nav-oculto li{
+    list-style: none;
+}
+
+.nav-oculto.visible{
+    opacity: 1;
+    left: 0;
+    box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.528);
+}
+
+.contnedor-login{
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.contnedor-login .login{
+    display: flex;
+    justify-content:center;
+    width: 50dvh;
+    height: 60dvh;
+    padding: 20px 15px;
+    background: white;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.login input{
+    height: 40px;
+    border: none;
+    padding: 0 8px;
+    font-size: 20px;
+    background: var(--input-color);
+    color: var(--text-color);
+    border-radius: 10px 0 10px 0;
+}
+
+input:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.login button{
+    background-color: var(--color-menu);
+    color: var(--color-text-menu);
+    font-size: 25px;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 19px;
+}
