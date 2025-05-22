@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (res.ok) {
                 alert("Usuario registrado con éxito");
-                window.location.href = "/index.html"; // Cambia esto si tu login está en otra ruta
+                window.location.href = "/login.html"; // Cambia esto si tu login está en otra ruta
             } else {
                 alert("Error al registrar: " + data.message);
             }
