@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = document.querySelector("#password").value;
 
         try {
-            const res = await fetch("https://inventario-backend-qf0d.onrender.com/api/login", {
+            const res = await fetch("https://inventario-backend-qf0d.onrender.com/api/registro", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

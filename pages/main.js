@@ -14,8 +14,10 @@ document.addEventListener("click", (e) =>{
     }
 });
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    const formRegistro = document.querySelector(".login");
+    const formRegistro = document.querySelector(".registro");
 
     formRegistro.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const res = await fetch("https://inventario-backend-qf0d.onrender.com/api/register", {
+            const res = await fetch("https://inventario-backend-qf0d.onrender.com/api/registro", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

@@ -109,7 +109,7 @@ body{
     padding: 20px 0;
 }
 
-.contnedor-login .login{
+.contnedor-login .registro{
     display: flex;
     justify-content:center;
     width: 50dvh;
@@ -120,7 +120,7 @@ body{
     gap: 19px;
 }
 
-.login input{
+.registro input{
     height: 40px;
     border: none;
     padding: 0 8px;
@@ -135,7 +135,7 @@ input:focus{
     border-bottom: 2px solid rgb(0, 0, 0);
 }
 
-.login button{
+.registro button{
     background-color: var(--color-menu);
     color: var(--color-text-menu);
     font-size: 25px;
