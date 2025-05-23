@@ -36,7 +36,7 @@
         <section class="contnedor-login">
             <form class="login" id="formCliente">
                 <input type="text" id="nombreCliente" placeholder="Nombre del cliente">
-                <input type="text" id="telefonoCliente" placeholder="Teléfono">
+                <input type="tel" id="telefonoCliente" name="telefonoCliente" pattern="[0-9]{7,15}" required placeholder="Solo números (7-15 dígitos)">
                 <textarea id="notasCliente" placeholder="Correo, direccion, etc."></textarea>
                 <button type="submit">Enviar</button>
             </form>

@@ -14,6 +14,17 @@ document.addEventListener("click", (e) =>{
     }
 });
 
+const telefono = document.getElementById("telefonoCliente").value;
+
+if (!/^\d{7,15}$/.test(telefono)) {
+  return alert("El teléfono debe contener solo números y tener entre 7 y 15 dígitos");
+}
+
+document.getElementById("telefonoCliente").addEventListener("input", (e) => {
+  e.target.value = e.target.value.replace(/[^0-9]/g, '');
+});
+
+
 
 document.getElementById("formCliente").addEventListener("submit", async (e) => {
     e.preventDefault();
