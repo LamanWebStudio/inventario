@@ -15,6 +15,11 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    fetch("https://inventario-backend-qf0d.onrender.com/")
+        .then(() => console.log("✅ Backend activado"))
+        .catch(err => console.log("❌ No se pudo activar el backend:", err));
+        
     console.log("✅ DOM cargado");
 
     const formLogin = document.querySelector(".login");
