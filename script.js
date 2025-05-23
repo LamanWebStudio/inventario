@@ -15,36 +15,51 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("✅ DOM cargado");
+
     const formLogin = document.querySelector(".login");
+
+    if (!formLogin) {
+        alert("❌ No se encontró el formulario de login.");
+        return;
+    }
 
     formLogin.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const email = document.querySelector("#email").value.trim();
-        const password = document.querySelector("#password").value;
+        const email = document.querySelector("#email")?.value?.trim();
+        const password = document.querySelector("#password")?.value;
+
+        if (!email || !password) {
+            alert("Por favor completa todos los campos.");
+            return;
+        }
+
+        console.log("📤 Enviando login:", { email, password });
 
         try {
-            const res = await fetch("https://inventario-backend-qf0d.onrender.com/api/login", {  // <-- Aquí cambio a /api/login
+            const res = await fetch("https://inventario-backend-qf0d.onrender.com/api/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ email, password })  // Solo email y password para login
+                body: JSON.stringify({ email, password })
             });
 
             const data = await res.json();
+            console.log("📥 Respuesta del backend:", data);
 
             if (res.ok) {
-                alert("Inicio de sesión exitoso");
-                localStorage.setItem("usuario", JSON.stringify(data.user)); // Guardamos el usuario completo
-                window.location.href = "/index.html"; // Redirigimos a página principal
+                alert("✅ Inicio de sesión exitoso");
+                localStorage.setItem("usuario", JSON.stringify(data.user));
+                window.location.href = "/index.html";
             } else {
-                alert("Email o contraseña incorrectos: " + data.message);
+                alert("❌ Login fallido: " + (data.message || "Error desconocido"));
             }
 
         } catch (error) {
-            console.error("Error de red:", error);
-            alert("No se pudo conectar al servidor");
+            console.error("🚨 Error al conectarse:", error);
+            alert("❌ No se pudo conectar con el servidor.");
         }
     });
 });
