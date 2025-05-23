@@ -92,3 +92,24 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const botonCerrar = document.getElementById("cerrarSesion");
+
+    if (botonCerrar) {
+        botonCerrar.addEventListener("click", () => {
+            const confirmar = confirm("¿Seguro que quieres cerrar sesión?");
+            if (confirmar) {
+                localStorage.removeItem("usuario"); // Elimina el usuario
+                alert("👋 Sesión cerrada con éxito");
+                window.location.href = "/login.html"; // Reemplaza por tu ruta de login
+            }
+        });
+    }
+});
+
+const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+if (!usuario) {
+    alert("Necesitas iniciar sesión primero.");
+    window.location.href = "/login.html"; // Asegúrate que coincida con tu ruta real
+}

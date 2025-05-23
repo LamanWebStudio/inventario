@@ -90,6 +90,7 @@ body{
     color: var(--color-text-menu);
     font-size: 30px;
     text-decoration: none;
+    margin-bottom: 15px;
 }
 
 .nav-oculto li{
